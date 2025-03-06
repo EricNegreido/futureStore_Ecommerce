@@ -1,0 +1,11 @@
+.Hero{
+  margin: 10rem;
+}
+
+.Hero > h1 {
+  color:blueviolet;
+}
+
+.Hero > h2 {
+  color:red;
+}

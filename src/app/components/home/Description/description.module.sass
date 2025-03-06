@@ -1,0 +1,26 @@
+.description
+  display: grid
+  grid-template-columns: 1fr 1fr
+  column-gap: 2.2rem
+  max-width: 1000px
+  border-radius: 1.3rem
+  margin: 6rem auto
+  padding: 2rem 2.5rem
+  &_Button
+    background: transparent
+    border: none
+    cursor: pointer
+    &--border
+      img
+        border: 3px solid $main-contrast
+
+  &_ImageContainer
+
+    position: relative
+    width: 500px
+    height: 300px
+    & > img 
+      object-fit: cover
+      border-radius: 1rem
+      box-shadow: 0 0 2rem rgba(255, 255, 200, 0.475)
+  
