@@ -1,10 +1,10 @@
+'use client';
 import Link from 'next/link'
-import { validateAccessToken } from 'app/utils/auth/validateAccessToken'
 import styles from './Header.module.sass'
-import { ShoppingCart } from '../ShoppingCart'
+import dynamic from 'next/dynamic'
 
-export const Header = async () => {
-  const customer = await validateAccessToken()
+const NoSsrShoppingCart = dynamic(() => import('../ShoppingCart'),{ssr : false});
+export const Header = ({customer}) => {
 
   return (
     <header className={styles.Header}>
@@ -24,7 +24,7 @@ export const Header = async () => {
       </nav>
       <div className={styles.Header__user}>
         {customer?.firstName ? (<p>Hola! {customer.firstName}</p>) : (<Link href="/login">Login</Link>)}
-        <ShoppingCart />
+        <NoSsrShoppingCart />
       </div>
     </header>)
 }
