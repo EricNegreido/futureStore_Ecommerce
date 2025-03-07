@@ -24,7 +24,6 @@ export const getProducts = async (id?: string): Promise<ProductType[]> => {
         tags: product.tags,
       }
     })
-    console.log("ok",transformedProducts);
     return transformedProducts
   } catch (error) {
     console.log(error)
